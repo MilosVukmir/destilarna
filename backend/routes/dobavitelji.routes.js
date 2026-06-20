@@ -1,14 +1,25 @@
 const express = require("express");
+const pool = require("../db/conections");
 
 const router = express.Router();
 
-const dobavitelji = [
-  { id: 1, ime: "Mirko Petrović" },
-  { id: 2, ime: "Ivan Horvat" }
-];
+router.get("/", async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT * FROM dobavitelj");
+    res.json(rows);
+  }
+  catch (error) {
+    res.status(500).json({
+      sporocilo: "Napaka pri pridobianju dobaviteljev!",
+      napaka: error.message,
+    });
+  }
+});
 
-router.get("/", (req, res) => {
-  res.json(dobavitelji);
+router.post("/", (req, res) => {
+  res.json({
+    sporocilo: "Dobavitelj uspesno dodan"
+  });
 });
 
 module.exports = router;
