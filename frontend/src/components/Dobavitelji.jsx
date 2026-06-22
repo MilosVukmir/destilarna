@@ -118,13 +118,16 @@ function Dobavitelji(){
 
   return(
     <>
-    <input className="form-control mb-3" type="text" placeholder="Išči dobavitelja..."
+    <div className="content-header">
+      <h2>Dobavitelji</h2>
+    <button className="btn-add" onClick={() => setPrikaziFormo(true)}>
+        Dodaj
+    </button>
+    </div>
+
+    <input className="form-control search-input" type="text" placeholder="Išči dobavitelja..."
             value={iskanje}
             onChange={(e) => setIskanje(e.target.value)}/>
-
-    <button className="btn btn-primary mb-3" onClick={() => setPrikaziFormo(true)}>
-        Dodaj dobavitelja
-    </button>
 
      {prikaziFormo && (
         <DobaviteljForm
@@ -146,7 +149,7 @@ function Dobavitelji(){
   />
       )}
 
-    <table className="table table-striped table-hover align-middle">
+    <table className="table table-hover align-middle">
   <thead>
     <tr>
       <th>Ime/Naziv</th>
