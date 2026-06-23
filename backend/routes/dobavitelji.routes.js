@@ -86,8 +86,7 @@ router.post("/", async(req, res) => {
     );
 
     res.status(201).json({
-      sporocilo: "Dobavitelj uspešno dodan.",
-      id: result.insertId
+      sporocilo: "Dobavitelj uspešno dodan."
     });
   }
 
