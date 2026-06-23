@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const dobaviteljiRoutes = require("./routes/dobavitelji.routes");
+const strankeRoutes = require("./routes/stranke.routes");
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/dobavitelji", dobaviteljiRoutes);
+app.use("/stranke", strankeRoutes);
 
 app.listen(port, "0.0.0.0", () => {
   console.log(`Strežnik teče na portu ${port}`);
