@@ -1,6 +1,6 @@
 import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx"
-import Stranke from "./components/Stranke.jsx";
+import Sadje from "./components/Sadje.jsx";
 import "./App.css";
 
 function App(){
@@ -11,7 +11,7 @@ function App(){
     <div className="d-flex app-layout">
     <Sidebar/>
     <div className="content">
-    <Stranke/> 
+    <Sadje/> 
     </div>
     </div>
     </>

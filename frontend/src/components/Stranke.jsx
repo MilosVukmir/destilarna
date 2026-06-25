@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import StrankaForm from "./StrankaForm.jsx";
+import { API_URL } from "../config/api.js";
 
 function Stranke(){
 
@@ -20,7 +21,7 @@ function Stranke(){
     useEffect(() => {
         const fetchStranke = async () => {
             const response = await fetch(
-                `http://localhost:3000/stranke?iskanje=${iskanje}`
+                `${API_URL}/stranke?iskanje=${iskanje}`
             );
         
             const data = await response.json();
@@ -33,8 +34,8 @@ function Stranke(){
 const shraniStranko = async (e) => {
   e.preventDefault();
 
-const url = urejanjeId ? `http://localhost:3000/stranke/${urejanjeId}` 
-                       : "http://localhost:3000/stranke";
+const url = urejanjeId ? `${API_URL}/stranke/${urejanjeId}` 
+                       : `${API_URL}/stranke`;
 
 const metoda = urejanjeId ? "PUT" : "POST";
 
@@ -63,7 +64,7 @@ if (response.ok) {
   setPrikaziFormo(false);
 
   const responseStranke = await fetch(
-     `http://localhost:3000/stranke?iskanje=${iskanje}`
+     `${API_URL}/stranke?iskanje=${iskanje}`
   );
 
   const strankeData = await responseStranke.json();
@@ -81,7 +82,7 @@ const izbrisiStranko = async(id) => {
     return;
   }
 
-  const response = await fetch(`http://localhost:3000/stranke/${id}`,
+  const response = await fetch(`${API_URL}/stranke/${id}`,
     {
       method: "DELETE",
     }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DobaviteljForm from "./DobaviteljForm.jsx";
+import { API_URL } from "../config/api.js";
 
 function Dobavitelji(){
 
@@ -21,7 +22,7 @@ function Dobavitelji(){
   useEffect(() => {
     const fetchDobavitelji = async () =>  {
       const response = await fetch(
-        `http://localhost:3000/dobavitelji?iskanje=${iskanje}`
+        `${API_URL}/dobavitelji?iskanje=${iskanje}`
       );
 
       const data = await response.json();
@@ -36,8 +37,8 @@ function Dobavitelji(){
   e.preventDefault();
 
   const url = urejanjeId
-    ? `http://localhost:3000/dobavitelji/${urejanjeId}`
-    : "http://localhost:3000/dobavitelji";
+    ? `${API_URL}/dobavitelji/${urejanjeId}`
+    : `${API_URL}/dobavitelji`;
 
   const metoda = urejanjeId ? "PUT" : "POST";
 
@@ -66,7 +67,7 @@ function Dobavitelji(){
     setPrikaziFormo(false);
 
     const responseDobavitelji = await fetch(
-      `http://localhost:3000/dobavitelji?iskanje=${iskanje}`
+      `${API_URL}/dobavitelji?iskanje=${iskanje}`
     );
 
     const dobaviteljiData = await responseDobavitelji.json();
@@ -86,7 +87,7 @@ function Dobavitelji(){
         return;
     }
 
-    const response = await fetch(`http://localhost:3000/dobavitelji/${id}`,
+    const response = await fetch(`${API_URL}/dobavitelji/${id}`,
         {
             method: "DELETE",
         }
