@@ -94,7 +94,7 @@ function Sadje(){
         }
     };
 
-    //Urejanje dobavitelja
+    //Urejanje sadja
     const zacniUrejanje = (item) => {
         setUrejanjeId(item.id);
 

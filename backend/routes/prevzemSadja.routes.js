@@ -10,8 +10,13 @@ router.get("/", async (req, res) => {
 
     let sql = `SELECT
                prevzem_sadja.id,
+
+               prevzem_sadja.dobavitelj_id,
                dobavitelj.ime_ali_naziv AS dobavitelj,
+
+               prevzem_sadja.sadje_id,
                sadje.naziv AS sadje,
+               
                prevzem_sadja.datum_prevzema,
                prevzem_sadja.kolicina_kg,
                prevzem_sadja.cena_na_kg,
