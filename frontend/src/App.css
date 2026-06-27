@@ -127,10 +127,12 @@ body {
 
 .form-modal {
   background: #fffaf0;
-  width: 460px;
-  padding: 28px;
-  border-radius: 14px;
+  width: 500px;
+  padding: 30px;
+  border-radius: 12px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .form-title {

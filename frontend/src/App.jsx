@@ -1,6 +1,6 @@
 import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx"
-import Sodi from "./components/Sodi.jsx";
+import Prodaja from "./components/Prodaja.jsx";
 import "./App.css";
 
 function App(){
@@ -11,7 +11,7 @@ function App(){
     <div className="d-flex app-layout">
     <Sidebar/>
     <div className="content">
-    <Sodi/> 
+    <Prodaja/> 
     </div>
     </div>
     </>
