@@ -32,7 +32,7 @@ body {
 
 .content {
   flex: 1;
-  padding: 32px;
+  padding: 40px 70px;
   background: #fbf4df;
 }
 
@@ -150,4 +150,89 @@ body {
 .btn-add-modal:hover {
   background: #c96d00;
   color: white;
+}
+
+/*Nadzorna plosca*/
+.dashboard-cards {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 35px;
+}
+
+.dashboard-card {
+  width: 170px;
+  height: 120px;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.dashboard-card h1 {
+  font-size: 52px;
+  font-weight: 700;
+  color: #000;
+}
+
+.card-orange {
+  background: #ffe8a8;
+  border: 2px solid #f28c00;
+  color: #f28c00;
+}
+
+.card-brown {
+  background: #f2d5a7;
+  border: 2px solid #a85b19;
+  color: #a85b19;
+}
+
+.card-red {
+  background: #ffc5b8;
+  border: 2px solid red;
+  color: red;
+}
+
+.card-green {
+  background: #bff0b2;
+  border: 2px solid #19b530;
+  color: #19b530;
+}
+
+.dashboard-chart {
+  background: white;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 18px;
+  max-width: 980px;
+}
+
+.fake-chart {
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+  background: repeating-linear-gradient(
+    to top,
+    white,
+    white 39px,
+    #ddd 40px
+  );
+}
+
+.bar {
+  width: 55px;
+  background: #b95508;
+  position: relative;
+}
+
+.bar span {
+  position: absolute;
+  bottom: -19px;
+  font-size: 12px;
+  color: #c77a49;
 }
