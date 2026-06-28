@@ -29,16 +29,18 @@ router.get("/", async(req, res) => {
                   JOIN sadje ON prevzem_sadja.sadje_id = sadje.id
                   JOIN dobavitelj ON prevzem_sadja.dobavitelj_id = dobavitelj.id`;
             
-        const params = [];
+        let params = [];
         
         if (iskanje) {
             sql += ` WHERE sadje.naziv LIKE ?
                      OR fermentacija.posoda LIKE ?
                      OR fermentacija.status LIKE ?
-                     OR fermentacija.opomba LIKE ?`;
+                     OR fermentacija.opomba LIKE ?
+                     OR fermentacija.zacetna_kolicina_kg LIKE ?`;
 
             const iskalniNiz = `%${iskanje}%`;
             params = [ iskalniNiz,
+                       iskalniNiz,
                        iskalniNiz,
                        iskalniNiz,
                        iskalniNiz ];

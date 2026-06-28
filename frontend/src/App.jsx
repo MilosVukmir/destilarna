@@ -1,8 +1,7 @@
 import Header from "./components/Header.jsx";
-import Sidebar from "./components/Sidebar.jsx"
-import Prodaja from "./components/Prodaja.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import Fermentacija from "./components/Fermentacija.jsx";
 import "./App.css";
-
 function App(){
 
   return(
@@ -11,7 +10,7 @@ function App(){
     <div className="d-flex app-layout">
     <Sidebar/>
     <div className="content">
-    <Prodaja/> 
+    <Fermentacija/> 
     </div>
     </div>
     </>

@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
 
                prevzem_sadja.sadje_id,
                sadje.naziv AS sadje,
+               sadje.sorta AS sorta,
                
                prevzem_sadja.datum_prevzema,
                prevzem_sadja.kolicina_kg,
