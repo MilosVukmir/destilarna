@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import dashboardIcon from "../assets/icons/dashboardWhite.png";
 import dobaviteljIcon from "../assets/icons/userWhite.png";
 import sadjeIcon from "../assets/icons/fruitsWhite.png";
@@ -16,94 +18,94 @@ function Sidebar() {
 
       <ul className="nav flex-column">
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/">
             <img src={dashboardIcon}
                  alt="Dashboard"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Nadzorna plošča</a>
+                 Nadzorna plošča</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/dobavitelji">
             <img src={dobaviteljIcon}
                  alt="DobaviteljIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Dobavitelji</a>
+                 Dobavitelji</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/sadje">
             <img src={sadjeIcon}
                  alt="SadjeIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Sadje</a>
+                 Sadje</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/prevzemsadja">
             <img src={prevzemsadjaIcon}
                  alt="PrevzemsadjaIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Prevzem sadja</a>
+                 Prevzem sadja</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/fermentacija">
             <img src={fermentacijaIcon}
                  alt="FermentacijaIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Fermentacija</a>
+                 Fermentacija</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/destilacija">
             <img src={destilacijaIcon}
                  alt="DestilacijaIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Destilacija</a>
+                 Destilacija</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/serijazganja">
             <img src={serijazganjaIcon}
                  alt="SerijazganjaIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Serije žganja</a>
+                 Serije žganja</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/sodi">
             <img src={sodiIcon}
                  alt="SodiIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Sodi</a>
+                 Sodi</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/stranke">
             <img src={strankeIcon}
                  alt="StrankeIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Stranke</a>
+                 Stranke</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/prodaja">
             <img src={prodajaIcon}
                  alt="ProdajaIcon"
                  width="20"
                  height="20"
                  className="me-2"/>
-                 Prodaja</a>
+                 Prodaja</NavLink>
         </li>
       </ul>
     </div>

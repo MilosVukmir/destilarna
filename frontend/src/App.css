@@ -2,6 +2,7 @@ body {
   margin: 0;
   background: #fbf4df;
   font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 .navbar {
