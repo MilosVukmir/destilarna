@@ -9,6 +9,7 @@ const serijaZganjaRoutes = require("./routes/serijaZganja.routes");
 const sodiRoutes = require("./routes/sodi.routes");
 const prodajaRoutes = require("./routes/prodaja.routes");
 const fermentacijaRoutes = require("./routes/fermentacija.routes");
+const destilacijaRoutes = require("./routes/destilacija.routes");
 
 const app = express();
 const port = 3000;
@@ -28,6 +29,7 @@ app.use("/serijazganja", serijaZganjaRoutes);
 app.use("/sodi", sodiRoutes);
 app.use("/prodaja", prodajaRoutes);
 app.use("/fermentacija", fermentacijaRoutes);
+app.use("/destilacija", destilacijaRoutes);
 
 app.listen(port, "0.0.0.0", () => {
   console.log(`Strežnik teče na portu ${port}`);

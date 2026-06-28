@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-//import FermentacijaForm from "./FermentacijaForm.jsx";
 import { API_URL } from "../config/api.js";
 import FermentacijaForm from "./FermentacijaForm.jsx";
 
