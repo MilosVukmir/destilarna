@@ -20,6 +20,8 @@ function Uporabniki(){
     
     const [ urejanjeId, setUrejanjeId ] = useState(null);
 
+    const [ filterVloga, setFilterVloga ] = useState("");
+
     useEffect(() => {
         const fetchUporabniki = async () => {
             const response = await fetch(
@@ -124,9 +126,20 @@ function Uporabniki(){
     </button>
     </div>
 
+    <div className="d-flex gap-3 mb-3">
     <input className="form-control search-input" type="text" placeholder="Išči uporabnika..."
             value={iskanje}
             onChange={(e) => setIskanje(e.target.value)}/>
+
+    <select className="form-select filter-select" value={filterVloga} 
+        onChange={(e) => setFilterVloga(e.target.value)}
+        style={{maxWidth: "180px"}}>
+
+            <option value="">Vloga...</option>
+            <option value="administrator">Administrator</option>
+            <option value="zaposleni">Zaposleni</option>
+        </select>
+    </div>
 
      {prikaziFormo && (
         <UporabnikiForm
@@ -162,7 +175,7 @@ function Uporabniki(){
   </thead>
 
   <tbody>
-    {uporabniki.map((uporabnik) => (
+    {uporabniki.filter((uporabnik) => filterVloga === "" || uporabnik.vloga === filterVloga).map((uporabnik) => (
       <tr key={uporabnik.id}>
         <td>{uporabnik.uporabnisko_ime}</td>
         <td>{uporabnik.ime}</td>

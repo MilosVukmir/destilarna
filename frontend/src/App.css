@@ -304,3 +304,11 @@ body {
   margin-bottom: 5px;
 }
 
+/*-----*/
+.filter-select {
+  width: 180px;
+  min-height: 38px;
+  height: 38px;
+  margin-left: 20px;
+}
+
