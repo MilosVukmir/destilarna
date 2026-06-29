@@ -2,7 +2,6 @@ body {
   margin: 0;
   background: #fbf4df;
   font-family: Arial, sans-serif;
-  overflow: hidden;
 }
 
 .navbar {
@@ -153,6 +152,23 @@ body {
   color: white;
 }
 
+.sidebar-section {
+  margin: 18px 0 8px 0;
+}
+
+.sidebar-line {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  margin-bottom: 6px;
+}
+
+.sidebar-section span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /*Nadzorna plosca*/
 .dashboard-cards {
   display: flex;
@@ -237,3 +253,54 @@ body {
   font-size: 12px;
   color: #c77a49;
 }
+
+/*Login*/ 
+.login-page {
+  min-height: 100vh;
+  background: #5a2507;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 380px;
+  background: #fffaf0;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.login-card h2 {
+  color: #4b1f05;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.login-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+
+.login-naslov {
+  padding-bottom: 6px;
+}
+
+.login-subtitle {
+    font-size: 20px;
+    font-weight: 200;
+    color: #555;
+    text-align: center;
+    margin-top: -18px;
+    margin-bottom: 35px;
+}
+
+.login-label {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+

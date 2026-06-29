@@ -10,9 +10,13 @@ import serijazganjaIcon from "../assets/icons/user-guideWhite.png";
 import sodiIcon from "../assets/icons/barrelWhite.png";
 import strankeIcon from "../assets/icons/friends-fotorWhite.png";
 import prodajaIcon from "../assets/icons/euroWhite.png";
+import uporavljanjeIcon from "../assets/icons/settings-fotorWhite.png";
 
 
 function Sidebar() {
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
     return(
         <div className="sidebar" style={{ width: "240px" }}>
 
@@ -107,6 +111,24 @@ function Sidebar() {
                  className="me-2"/>
                  Prodaja</NavLink>
         </li>
+        {user?.vloga === "administrator" && (
+          <>
+        <div className="sidebar-section">
+        <div className="sidebar-line"></div>
+        <span>ADMIN</span>
+        </div>
+
+         <li className="nav-item">
+          <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/uporabniki">
+            <img src={uporavljanjeIcon}
+                 alt="UpravljanjeIcon"
+                 width="20"
+                 height="20"
+                 className="me-2"/>
+                 Upravljanje</NavLink>
+        </li>
+        </>
+        )}
       </ul>
     </div>
     );
