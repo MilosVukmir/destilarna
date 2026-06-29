@@ -24,6 +24,8 @@ function Destilacija(){
     
     const [urejanjeId, setUrejanjeId] = useState(null); 
 
+    const [filterJakost, setFilterJakost] = useState("");
+
     useEffect(() => {
     const fetchDestilacija = async() => {
         const response = await fetch(
@@ -145,10 +147,24 @@ return(
             </button>
         </div>
 
+        <div className="d-flex gap-3 mb-3">
          <input className="form-control search-input" type="text" placeholder="Išči destilacijo..."
                value={iskanje} 
                onChange={(e) => setIskanje(e.target.value)}/>
          
+         <select className="form-select filter-select" value={filterJakost} 
+        onChange={(e) => setFilterJakost(e.target.value)}
+        style={{maxWidth: "180px"}}>
+
+            <option value="">Jakost...</option>
+            {destilacija.map((dest) => (
+              <option key={dest.id} value={dest.jakost_alkohola}>
+                {dest.jakost_alkohola}
+              </option>
+            ))}
+        </select>
+         </div>
+
          {prikaziFormo && (
             <DestilacijaForm
                 novaDestilacija={novaDestilacija}
@@ -186,7 +202,8 @@ return(
             </thead>
 
             <tbody>
-                {destilacija.map((dest) => (
+                {destilacija.filter((dest) => filterJakost === "" ||
+                String(dest.jakost_alkohola) === filterJakost).map((dest) => (
                     <tr key={dest.id}>
                         <td>{dest.serija}</td>
                         <td>{dest.datum_destilacije.split("T")[0]}</td>

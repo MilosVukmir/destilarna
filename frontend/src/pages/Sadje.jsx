@@ -17,6 +17,8 @@ function Sadje(){
 
     const [urejanjeId, setUrejanjeId] = useState(null);
 
+    const [filterSadje, setFilterSadje] = useState("");
+
     useEffect(() => {
         const fetchSadje = async() => {
             const response = await fetch(
@@ -116,10 +118,23 @@ function Sadje(){
             </button>
         </div>
 
+        <div className="d-flex gap-3 mb-3">
         <input className="form-control search-input" type="text" placeholder="Išči sadje..."
                value={iskanje} 
                onChange={(e) => setIskanje(e.target.value)}/>
         
+        <select className="form-select filter-select" value={filterSadje} 
+        onChange={(e) => setFilterSadje(e.target.value)}
+        style={{maxWidth: "180px"}}>
+
+            <option value="">Sadje...</option>
+            {sadje.map((item) => (
+              <option key={item.id} value={item.naziv}>
+                {item.naziv}
+              </option>
+            ))}
+        </select>
+        </div>
         {prikaziFormo && (
             <SadjeForm 
                 novoSadje = {novoSadje}
@@ -149,7 +164,8 @@ function Sadje(){
             </thead>
 
             <tbody>
-                {sadje.map((item) => (
+                {sadje.filter((item) => filterSadje === "" ||
+                item.naziv === filterSadje).map((item) => (
                     <tr key={item.id}>
                         <td>{item.naziv}</td>
                         <td>{item.sorta}</td>

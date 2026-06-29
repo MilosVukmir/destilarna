@@ -22,6 +22,8 @@ function Sodi(){
 
     const [serijaZganja, setSerijaZganja] = useState([]);
 
+    const [ filterStanje, setFilterStanje ] = useState("");
+
     useEffect(() => {
         const fetchSodi = async () => {
             const response = await fetch (
@@ -139,9 +141,22 @@ const shraniSod = async(e) => {
     </button>
     </div>
 
+    <div className="d-flex gap-3 mb-3">
     <input className="form-control search-input" type="text" placeholder="Išči sod..."
             value={iskanje}
             onChange={(e) => setIskanje(e.target.value)}/>
+
+    <select className="form-select filter-select" value={filterStanje} 
+        onChange={(e) => setFilterStanje(e.target.value)}
+        style={{maxWidth: "180px"}}>
+
+            <option value="">Stanje...</option>
+            <option value="prazen">Prazen</option>
+            <option value="poln">Poln</option>
+            <option value="okvara">Okvara</option>
+        </select>
+
+    </div>
 
      {prikaziFormo && (
         <SodiForm
@@ -179,7 +194,8 @@ const shraniSod = async(e) => {
   </thead>
 
   <tbody>
-    {sodi.map((sod) => (
+    {sodi.filter((sod) => filterStanje === "" ||
+     sod.stanje === filterStanje).map((sod) => (
       <tr key={sod.id}>
         <td>{sod.serija}</td>
         <td>{sod.oznaka}</td>

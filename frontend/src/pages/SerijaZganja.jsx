@@ -22,6 +22,8 @@ function SerijaZganja(){
 
     const [urejanjeId, setUrejanjeId] = useState(null); 
 
+    const [ filterVrsta, setFilterVrsta ] = useState("");
+
     useEffect(() => {
         const fetchSerijaZganja = async () => {
             const response = await fetch (
@@ -130,10 +132,23 @@ function SerijaZganja(){
             </button>
         </div>
 
+        <div className="d-flex gap-3 mb-3">
         <input className="form-control search-input" type="text" placeholder="Išči serijo žganja..."
                value={iskanje}
                onChange={(e) => setIskanje(e.target.value)}/>
         
+        <select className="form-select filter-select" value={filterVrsta} 
+        onChange={(e) => setFilterVrsta(e.target.value)}
+        style={{maxWidth: "180px"}}>
+
+            <option value="">Vrsta...</option>
+            {serijaZganja.map((serija) => (
+              <option key={serija.id} value={serija.vrsta_zganja}>
+                {serija.vrsta_zganja}
+              </option>
+            ))}
+        </select>
+        </div>
          {prikaziFormo && (
                 <SerijaZganjaForm
                   novaSerija={novaSerija}
@@ -171,7 +186,8 @@ function SerijaZganja(){
   </thead>
 
   <tbody>
-    {serijaZganja.map((serija) => (
+    {serijaZganja.filter((serija) => filterVrsta === "" || 
+    serija.vrsta_zganja === filterVrsta).map((serija) => (
       <tr key={serija.id}>
         <td>{serija.naziv_serije}</td>
         <td>{serija.vrsta_zganja}</td>
