@@ -110,9 +110,9 @@ function FermentacijaForm({
               }
             >
               <option value="">Izberi status</option>
-              <option value="v teku">V teku</option>
+              <option value="v_teku">V teku</option>
               <option value="zakljucena">Zaključena</option>
-              <option value="prekinjena">Prekinjena</option>
+              <option value="v_pripravi">V pripravi</option>
             </select>
           </div>
 
