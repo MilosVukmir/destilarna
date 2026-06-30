@@ -1,7 +1,7 @@
-const express = require("express");
-const pool = require("../db/conections");
-const { route } = require("./stranke.routes");
-const router = express.Router();
+import { Router } from "express";
+import pool from "../db/conections.js";
+import route from "./stranke.routes.js";
+const router = Router();
 
 //GET METODA
 router.get("/", async (req, res) => {
@@ -136,4 +136,4 @@ router.delete("/:id", async(req, res) =>{
     }
 });
 
-module.exports = router;
+export default router;

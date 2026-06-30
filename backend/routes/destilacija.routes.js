@@ -1,7 +1,7 @@
-const express = require("express");
-const pool = require("../db/conections");
+import { Router } from "express";
+import pool from "../db/conections.js";
 
-const router = express.Router();
+const router = Router();
 
 //GET METODA
 router.get("/", async(req, res) => {
@@ -207,4 +207,4 @@ router.delete("/:id", async(req, res) => {
     }
 });
 
-module.exports = router;
+export default router;
